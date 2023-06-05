@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import logo from '../../images/logo.png'
 import styles from '../../App.module.css'
 
@@ -8,9 +8,13 @@ const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <img src={logo} alt="Logo" className={styles.logo}/>
-      <div className={styles.links}>
-        <Link to="/accueil">Accueil</Link>
-        <Link to="/a-propos">A propos</Link>
+      <div id={styles.links}>
+        <NavLink to="/accueil" className={({ isActive }) => isActive ? styles.active : ''}>
+          Accueil
+        </NavLink>
+        <NavLink to="/a-propos" className={({ isActive }) => isActive ? styles.active : ''}>
+          A propos
+        </NavLink>
       </div>
     </nav>
   )

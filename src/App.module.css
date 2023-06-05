@@ -10,7 +10,7 @@
     height: 47px;
 }
 
-.links{
+#links{
     display: flex;
     gap:10px;
     font-size: 12px;
@@ -19,6 +19,6 @@
     text-decoration: none;
 }
 
-.active{
+#links a.active {
     text-decoration: underline;
 }

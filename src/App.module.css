@@ -22,3 +22,19 @@
 #links a.active {
     text-decoration: underline;
 }
+
+@media screen and (min-width: 769px) {
+    .nav{
+        padding:  40px 100px 63px 100px;
+    }
+
+    .logo{
+        width: 210.32px;
+        height: 68px;
+    }
+
+    #links{
+        gap:57px;
+        font-size: 24px;
+    }
+}

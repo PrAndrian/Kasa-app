@@ -1,3 +1,5 @@
+/* NAVBAR ------------------------------------------------*/
+
 .nav{
      display: flex;
      justify-content: space-between;
@@ -14,6 +16,7 @@
     display: flex;
     gap:10px;
     font-size: 12px;
+    font-weight: 500;
     color : #FF6060;
     text-transform: uppercase;
     text-decoration: none;
@@ -37,4 +40,40 @@
         gap:57px;
         font-size: 24px;
     }
+}
+
+/* HOME ------------------------------------------------*/
+
+#home{
+    padding: 0 20px;
+}
+
+.banner {
+    display:flex;
+    align-items: center;
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("./images/landscape_home.png");
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    min-height: 111px;
+    padding : 16px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 500;
+}
+
+.banner_title{
+    font-size : 24px;
+    font-weight : 500;
+}
+
+.banner_text_1,.banner_text_2{
+    font-weight: inherit;
+}
+
+.banner_text_2::before{
+    content: "\a";
+    white-space: pre;
 }

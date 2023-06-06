@@ -77,3 +77,35 @@
     content: "\a";
     white-space: pre;
 }
+
+@media screen and (min-width: 769px) {
+
+    #home{
+        padding: 0 100px;
+    }
+
+    .banner{
+        min-height: 223px;
+        padding : 10px;
+        justify-content: center ;
+        margin-bottom: 43px;
+    }
+
+    .banner_title{
+        font-size: 48px;
+    }
+
+    .banner_text_2::before{
+        content: "";
+        white-space: normal;
+    }
+}
+
+/* Thumb ------------------------------- */
+
+.thumb{
+    width: 340px;
+    height: 340px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}

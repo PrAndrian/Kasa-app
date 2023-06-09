@@ -1,6 +1,8 @@
 import React from 'react'
 import styles from '../App.module.css'
 import { useState } from 'react'
+import Vector_right from '../images/Vector_right.png'
+import Vector_left from '../images/Vector_left.png'
 
 const Gallery = ({title,pictures}) => {
     const [positionImage, setPositionImage] = useState(0)
@@ -36,8 +38,19 @@ const Gallery = ({title,pictures}) => {
         }}
     >
         <div className={styles.navGallery}>
-            <button onClick={prevImageShowing}>reculé</button>
-            <button onClick={nextImageShowing}>Avancé</button>
+            <img 
+                className={styles.arrowGallery} 
+                onClick={prevImageShowing} 
+                src={Vector_left} 
+                alt="flèche gauche"
+            />
+            
+            <img 
+                className={styles.arrowGallery} 
+                onClick={nextImageShowing} 
+                src={Vector_right} 
+                alt="flèche droite"
+            />
         </div>
 
         <footer className={styles.footerGallery}>

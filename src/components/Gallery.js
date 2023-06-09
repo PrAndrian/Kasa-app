@@ -19,7 +19,7 @@ const Gallery = ({title,pictures}) => {
 
     const prevImageShowing = () =>{
         var postitionPrevImage = positionImage - 1
-        if(postitionPrevImage <= 0){
+        if(postitionPrevImage < 0){
             postitionPrevImage = pictures.length -1
             setPositionImage(pictures.length -1)
         }else{
@@ -35,8 +35,14 @@ const Gallery = ({title,pictures}) => {
             backgroundImage:`url(${imageShowing})`
         }}
     >
-        <button onClick={prevImageShowing}>reculé</button>
-        <button onClick={nextImageShowing}>Avancé</button>
+        <div className={styles.navGallery}>
+            <button onClick={prevImageShowing}>reculé</button>
+            <button onClick={nextImageShowing}>Avancé</button>
+        </div>
+
+        <footer className={styles.footerGallery}>
+            {positionImage +1}/{pictures.length}
+        </footer>
     </div>
   )
 }

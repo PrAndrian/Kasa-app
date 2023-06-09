@@ -195,6 +195,7 @@
     width: 100%;
     height : 255px;
     padding: 0 6px;
+    margin-bottom : 15px;
     border-radius: 10px;
     background-color: #FF6060;
     background-size : cover;
@@ -230,9 +231,52 @@
 @media screen and (min-width: 769px) {
     .gallery{
         height: 415px;
-        padding: 0 23px;
+        padding: 0 25px;
+        margin-bottom : 30px;
+    }
+    .arrowGallery{
+        width: 46.68px;
+        height: 79.2px;
     }
     .footerGallery{
         display : block;
     }
+}
+
+/* Titre -----------------  */
+
+.title_logement{
+    font-weight: 500;
+    font-size: 18px;
+    color : #FF6060;
+    line-height: 25.67px;
+    margin-bottom: 5px;
+}
+
+.location_logement{
+    font-weight: 500;
+    font-size: 14px;
+    color : #FF6060;
+    line-height: 19.96px;
+}
+
+/* Tag ------------------------ */
+.tags_logement{
+    margin-top: 10px;
+    display :flex;
+    flex-wrap: wrap;
+    gap : 10px;
+}
+
+.tag{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-width: 84px;
+    min-height: 18px;
+    border-radius: 5px;
+    background-color: #FF6060;
+    color : white;
+    font-size: 10px;
+    padding : 0 10px;
 }

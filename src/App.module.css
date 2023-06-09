@@ -119,6 +119,8 @@
 /* Thumb ------------------------------- */
 
 .thumb{
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -126,7 +128,9 @@
     height: 255px;
     padding : 19px;
     border-radius: 10px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%),#FF6060;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background-size : cover;
+    background-position : center;
 }
 
 .thumb > *{

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../App.module.css'
+import Thumb from '../components/Thumb'
 
 const Home = () => {
   const logementId = 'testId'
@@ -14,7 +15,10 @@ const Home = () => {
         </div >
 
         <section className={styles.thumbs_container}>
-          
+          <Thumb/> 
+          <Thumb/> 
+          <Thumb/> 
+          <Thumb/> 
         </section>
         <Link to={`/fiche-logement/${logementId}`}>Lien logement</Link>
     </div>

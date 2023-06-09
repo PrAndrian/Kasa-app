@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styles from '../App.module.css'
 import Thumb from '../components/Thumb'
+import listLogement from '../__mock_data__/logements.json' 
 
 const Home = () => {
-  const logementId = 'testId'
-  
+
+  console.log(listLogement)
+
   return (
     <div id={styles.home}>
         <div className={styles.banner}>
@@ -15,12 +16,17 @@ const Home = () => {
         </div >
 
         <section className={styles.thumbs_container}>
-          <Thumb/> 
-          <Thumb/> 
-          <Thumb/> 
-          <Thumb/> 
+          {listLogement && listLogement.map((logement)=>{
+            return (
+              <Thumb 
+                key={logement.id}
+                id={logement.id}
+                title={logement.title} 
+                cover={logement.cover} 
+              />
+            )
+          })}
         </section>
-        <Link to={`/fiche-logement/${logementId}`}>Lien logement</Link>
     </div>
   )
 }

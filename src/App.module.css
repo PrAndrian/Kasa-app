@@ -46,6 +46,10 @@
 
 #home{
     padding: 0 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 .banner {
@@ -165,7 +169,8 @@
     align-items: center;
     flex-direction: column;
     gap : 28px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+    margin-top: auto;
     width: 100%;
     height: 209px;
     background-color: #000000;
@@ -181,9 +186,18 @@
 
 /* logement ------------------------------- */
 .logement{
-    padding : 20px
+    padding : 0 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
+@media screen and (min-width: 769px) {
+    .logement{
+        padding : 0 100px;
+    }
+}
 /* Gallery ------------------------------- */
 .gallery{
     display: flex;
@@ -243,6 +257,8 @@
     }
 }
 
+/* HEADER -------------------- */
+
 /* Titre -----------------  */
 
 .title_logement{
@@ -280,3 +296,101 @@
     font-size: 10px;
     padding : 0 10px;
 }
+
+@media screen and (min-width: 769px) {
+    .title_logement{
+        font-size: 36px;
+        line-height: 51.34px;
+        margin-bottom: 0;
+    }
+    .location_logement{
+        font-size: 18px;
+        line-height: 25.67px;
+        margin-bottom: 20px;
+    }
+    .tag{
+        height: 25px;
+        border-radius: 10px;
+        font-size: 14px;
+    }
+}
+
+/* FOOTER -------------------- */
+
+/* Rating -------------------- */
+.info_footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin : 16px 0;
+}
+
+.star_rating{
+    display : flex;
+    gap : 0 6.59px;
+}
+
+.star{
+    width: 13.41px;
+    height: 13px;
+}
+
+/* Profile picture ----------- */
+
+.profile_info{
+    display: flex;
+    align-items: center;
+    gap : 10.5px;
+    color : #FF6060;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.profile_picture{
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+}
+
+/* info_container ----------------- */
+
+@media screen and (min-width: 769px) {
+    .info_container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info_footer{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: none;
+        align-items: none;
+        margin : 0;
+        gap : 25px;
+    }
+
+    .star_rating{
+        display : flex;
+        gap : 0 15.25px;
+    }
+
+    .star{
+        width: 24.75px;
+        height: 24px;
+    }
+
+    .profile_info{
+        height: 64px;
+        font-size: 18px;
+        justify-content: none;
+        align-items: none;
+    }
+
+    
+    .profile_picture{
+        width: 64px;
+        height: 64px;
+    }
+    
+}
+

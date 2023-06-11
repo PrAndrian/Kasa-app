@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from '../App.module.css'
 import chevron_down from '../images/chevron_down.svg'
 
-const Collapse = ({title, description, equipments }) => {
+const Collapse = ({title, text, list }) => {
 
     const [active, setActive] = useState(false)
 
@@ -21,9 +21,9 @@ const Collapse = ({title, description, equipments }) => {
                 />
             </header>
             <div className={!active ? styles.collapse_content : styles.collapse_content +" "+ styles.collapse_content_active  }>
-                <p>{description && description }</p>
+                <p>{text && text }</p>
                 <ul className={styles.collapse_list}>
-                    {equipments && equipments.map((equipement,i)=>{
+                    {list && list.map((equipement,i)=>{
                         return <li key={i}>{equipement}</li>
                     })}
                 </ul>

@@ -55,8 +55,8 @@ const Accomodation = () => {
       </section>
 
       <section className={styles.collapse_container}>
-        <Collapse title={'Description'} description={logementData[0].description}/>
-        <Collapse title={'Equipments'} equipments={logementData[0].equipments} />
+        <Collapse title={'Description'} text={logementData[0].description}/>
+        <Collapse title={'Equipments'} list={logementData[0].equipments} />
       </section>
     </div>
   )

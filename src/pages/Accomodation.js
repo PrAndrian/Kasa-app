@@ -6,6 +6,7 @@ import listLogement from '../__mock_data__/logements.json'
 import Tag from '../components/Tag'
 import start_up from '../images/start_up.svg'
 import start_down from '../images/start_down.svg'
+import Collapse from '../components/Collapse'
 
 const Accomodation = () => {
   const {logementId} = useParams()
@@ -33,12 +34,12 @@ const Accomodation = () => {
           <div className={styles.star_rating}>
             {
               Array.apply(null, { length: logementData[0].rating }).map((e, i) => 
-                <img  className={styles.star} src={start_up} alt="note_étoilé"/>
+                <img key={i} className={styles.star} src={start_up} alt="note_étoilé"/>
               )
             }
             {
               Array.apply(null, { length: 5-logementData[0].rating }).map((e, i) => 
-                <img className={styles.star} src={start_down} alt="note_étoilé"/>
+                <img key={i} className={styles.star} src={start_down} alt="note_étoilé"/>
               )
             }
           </div>
@@ -51,6 +52,11 @@ const Accomodation = () => {
             />
           </div>
         </footer>
+      </section>
+
+      <section className={styles.collapse_container}>
+        <Collapse description={logementData[0].description}/>
+        <Collapse equipments={logementData[0].equipments} />
       </section>
     </div>
   )

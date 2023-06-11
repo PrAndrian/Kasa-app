@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from '../App.module.css'
 import chevron_down from '../images/chevron_down.svg'
 
-const Collapse = ({description, equipments }) => {
+const Collapse = ({title, description, equipments }) => {
 
     const [active, setActive] = useState(false)
 
@@ -11,9 +11,9 @@ const Collapse = ({description, equipments }) => {
     }
 
     return (
-        <div onClick={handleClick} className={styles.collapse}>
-            <header className={styles.collapse_header}>
-                <span>Title</span>
+        <div className={styles.collapse}>
+            <header onClick={handleClick} className={styles.collapse_header}>
+                <span>{title}</span>
                 <img 
                     className={active ? styles.collapse_icon_active : undefined} 
                     src={chevron_down} 

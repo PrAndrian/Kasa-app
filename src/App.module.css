@@ -443,3 +443,29 @@
     padding:0;
     margin:0;
 }
+
+@media screen and (min-width: 769px) {
+    .collapse{
+        width: 50%;
+    }
+
+    .collapse_container{
+        flex-direction: row;  
+        justify-content: space-between;
+        padding: 26px 0;
+        gap : 88px;
+    }
+
+    .collapse_header{
+        height: 52px;
+        border-radius: 10px;
+    }
+
+    .collapse_content{
+        padding: 30px 20px;
+        line-height: 25.67px;
+    }
+    .collapse_content > *{
+        line-height: 25.67px;
+    }
+}

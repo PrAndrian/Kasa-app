@@ -4,10 +4,11 @@ import { useState } from 'react'
 import Vector_right from '../images/Vector_right.png'
 import Vector_left from '../images/Vector_left.png'
 
-const Gallery = ({title,pictures}) => {
+const Gallery = ({pictures}) => {
     const [positionImage, setPositionImage] = useState(0)
 
     const [imageShowing, setImageShowing] = useState(pictures[0])
+
     const nextImageShowing = () =>{
         var postitionNextImage = positionImage + 1
         if(postitionNextImage > pictures.length - 1){
@@ -37,7 +38,7 @@ const Gallery = ({title,pictures}) => {
             backgroundImage:`url(${imageShowing})`
         }}
     >
-        <div className={styles.navGallery}>
+        <div className={pictures.length > 1 ? styles.navGallery : styles.navGallery_hidden}>
             <img 
                 className={styles.arrowGallery} 
                 onClick={prevImageShowing} 
@@ -53,7 +54,7 @@ const Gallery = ({title,pictures}) => {
             />
         </div>
 
-        <footer className={styles.footerGallery}>
+        <footer className={ pictures.length > 1 ? styles.footerGallery : styles.navGallery_hidden}>
             {positionImage +1}/{pictures.length}
         </footer>
     </div>

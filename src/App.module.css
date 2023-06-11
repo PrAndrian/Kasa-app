@@ -227,6 +227,10 @@
     cursor: pointer;
 }
 
+.navGallery_hidden{
+    display: none;
+}
+
 .arrowGallery{
     width: 11.67px;
     height: 19.8px;

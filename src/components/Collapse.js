@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from '../App.module.css'
 import chevron_down from '../images/chevron_down.svg'
 
-const Collapse = ({title, text, list }) => {
+const Collapse = ({title, text, list, length }) => {
 
     const [active, setActive] = useState(false)
 
@@ -11,7 +11,7 @@ const Collapse = ({title, text, list }) => {
     }
 
     return (
-        <div className={styles.collapse}>
+        <div className={length === "petit" ? styles.collapse_short : styles.collapse_long }>
             <header onClick={handleClick} className={styles.collapse_header}>
                 <span>{title}</span>
                 <img 

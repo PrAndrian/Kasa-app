@@ -504,3 +504,31 @@
         padding: 0 108px;
     }
 }
+
+/* 404 erreur -------------------------- */
+#page404{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color : #FF6060
+}
+
+.error404{
+    font-weight: 700;
+    font-size: 288px;
+    margin-bottom: 66px;
+}
+
+.sentence404{
+    font-weight: 500;
+    font-size: 36px;
+    margin-bottom: 182px;
+}
+
+.link404{
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: underline;
+    margin-bottom: 159px;
+}

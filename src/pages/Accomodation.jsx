@@ -10,44 +10,46 @@ import Rating from '../components/Rating'
 const Accomodation = () => {
 
   const {logementId} = useParams()
-  const logementData = listLogement.filter((logement)=>logement.id === logementId) //find c'est mieux
+  const logementData = listLogement.find((logement)=>logement.id === logementId) //find c'est mieux
 
   useEffect(() => {
-    document.title = `${logementData[0].title}`;
+    document.title = `${logementData.title}`;
   },[logementData]);
 
   return (
     <div className={styles.logement}>
       <Gallery 
-        title={logementData[0].title} 
-        pictures={logementData[0].pictures}
+        title={logementData.title} 
+        pictures={logementData.pictures}
       />
       <section className={styles.info_container}>
         <header className={styles.info_header}>
-          <h1 className={styles.title_logement}>{logementData[0].title}</h1>
-          <span className={styles.location_logement}>{logementData[0].location}</span>
+          <h1 className={styles.title_logement}>{logementData.title}</h1>
+          <span className={styles.location_logement}>{logementData.location}</span>
           <div className={styles.tags_logement}>
-            {logementData[0].tags.map((tag)=>{
+            {logementData.tags.map((tag)=>{
               return <Tag key={tag} tag={tag}/>
             })}
           </div>
         </header>
         <footer className={styles.info_footer}>
-          <Rating rating={logementData[0].rating }/>
+          
+          <Rating rating={logementData.rating }/>
+
           <div className={styles.profile_info}>
-            <span>{logementData[0].host.name}</span>
+            <span>{logementData.host.name}</span>
             <img 
               className={styles.profile_picture} 
-              src={logementData[0].host.picture} 
-              alt={"Photo de "+logementData[0].host.name}
+              src={logementData.host.picture} 
+              alt={"Photo de "+logementData.host.name}
             />
           </div>
         </footer>
       </section>
 
       <section className={styles.collapse_container}>
-        <Collapse title={'Description'} text={logementData[0].description} length={"petit"}/>
-        <Collapse title={'Equipments'} list={logementData[0].equipments} length={"petit"}/>
+        <Collapse title={'Description'} text={logementData.description} length={"petit"}/>
+        <Collapse title={'Equipments'} text={logementData.equipments.map((equipement)=>(equipement+"\r\n"))} length={"petit"}/>
       </section>
     </div>
   )

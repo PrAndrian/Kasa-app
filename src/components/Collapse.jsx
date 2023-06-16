@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from '../css/Collapse.module.css'
 import chevron_down from '../images/chevron_down.svg'
 
-const Collapse = ({title, text, list, length }) => {
+const Collapse = ({title, text }) => {
 
     const [active, setActive] = useState(false)
 
@@ -11,7 +11,7 @@ const Collapse = ({title, text, list, length }) => {
     }
 
     return (
-        <div className={length === "petit" ? styles.collapse_short : styles.collapse_long }>
+        <div className={styles.collapse}>
             <header onClick={handleClick} className={styles.collapse_header}>
                 <span>{title}</span>
                 <img 
@@ -21,12 +21,15 @@ const Collapse = ({title, text, list, length }) => {
                 />
             </header>
             <div className={!active ? styles.collapse_content : styles.collapse_content +" "+ styles.collapse_content_active  }>
-                <p>{text && text }</p>
-                <ul className={styles.collapse_list}>
-                    {list && list.map((equipement,i)=>{
-                        return <li key={i}>{equipement}</li>
-                    })}
-                </ul>
+                { typeof text === "string"? 
+                    (<p>
+                        {text && text}
+                    </p>)
+                :
+                    (<p className={styles.equipement}>
+                        {text && text.map((equipement)=>(equipement+"\r\n"))}
+                    </p>)
+                }
             </div>
         </div>
     )

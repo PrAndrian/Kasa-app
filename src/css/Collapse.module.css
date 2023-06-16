@@ -1,13 +1,6 @@
 /* COLLAPSE ------------------------ */
 
-.collapse_container{
-    display : flex;
-    flex-direction: column;
-    gap : 20px;
-    padding: 16.5px 0;
-}
-
-.collapse_short,.collapse_long{
+.collapse{
     width: 100%;
 }
 
@@ -25,7 +18,6 @@
     font-size : 13px;
     cursor: pointer;;
 }
-
 
 .collapse_icon_active{
     transform: rotate(-180deg);
@@ -47,23 +39,13 @@
     display: block;
 }
 
-.collapse_list > *{
-    list-style:none;
-    padding:0;
-    margin:0;
+.equipement{
+    width: 10px;  
+    display: table-cell;
+    vertical-align: middle;
 }
 
 @media screen and (min-width: 769px) {
-    .collapse_short{
-        width: 50%;
-    }
-
-    .collapse_container{
-        flex-direction: row;  
-        justify-content: space-between;
-        padding: 26px 0;
-        gap : 88px;
-    }
 
     .collapse_header{
         height: 52px;

@@ -27,7 +27,7 @@ const Collapse = ({title, text }) => {
                     </p>)
                 :
                     (<p className={styles.equipement}>
-                        {text && text.map((equipement)=>(equipement+"\r\n"))}
+                        {text && text.map((equipement)=>(equipement))}
                     </p>)
                 }
             </div>

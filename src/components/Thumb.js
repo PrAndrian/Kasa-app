@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../App.module.css'
+import styles from '../css/Thumb.module.css'
 import { Link } from 'react-router-dom'
 
 

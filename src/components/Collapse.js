@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styles from '../App.module.css'
+import styles from '../css/Collapse.module.css'
 import chevron_down from '../images/chevron_down.svg'
 
 const Collapse = ({title, text, list, length }) => {

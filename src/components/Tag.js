@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../App.module.css'
+import styles from '../css/Tag.module.css'
 
 const Tag = ({tag}) => {
   return (

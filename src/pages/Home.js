@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../App.module.css'
+import styles from '../css/Home.module.css'
 import Thumb from '../components/Thumb'
 import listLogement from '../__mock_data__/logements.json' 
 import landscape_home from '../images/landscape_home.png'

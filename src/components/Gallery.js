@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../App.module.css'
+import styles from '../css/Gallery.module.css'
 import { useState } from 'react'
 import Vector_right from '../images/Vector_right.png'
 import Vector_left from '../images/Vector_left.png'

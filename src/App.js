@@ -8,8 +8,6 @@ function App() {
   return (
     <Routes>
       <Route index element={<Home/>}/>
-      <Route path="/accueil" element={<Home/>}/>
-      <Route path="/fiche-logement" element={<Home/>}/>
       <Route path="/fiche-logement/:logementId" element={<Accomodation/>}/>
       <Route path="/a-propos" element={<About/>}/>
       <Route path="/*" element={<Error404/>}/>

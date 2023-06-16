@@ -2,7 +2,6 @@
 
 .collapse{
     width: 100%;
-    position: relative;
 }
 
 .collapse_header{
@@ -25,17 +24,13 @@
 }
 
 .collapse_content{
-    position: absolute;
-    top: 30px;
     display: none;
     width: 100%;
     height: fit-content;
     padding: 17px 11px ;
     color : #FF6060;
     background-color: #F6F6F6;
-    border-radius: 0 0 5px 5px;
     font-size : 12px;
-    z-index: -1;
 }
 
 .collapse_content_active{

@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../css/Home.module.css'
 import Thumb from '../components/Thumb'
-import listLogement from '../__mock_data__/logements.json' 
+import listLogement from '../data/logements.json' 
 import landscape_home from '../images/landscape_home.png'
 import Banner from '../components/Banner'
 
 
 const Home = () => {
-
-  console.log(listLogement)
+  useEffect(() => {
+    document.title = `Accueil`;
+  },[]);
 
   return (
     <div id={styles.home}>

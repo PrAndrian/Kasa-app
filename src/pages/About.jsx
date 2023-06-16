@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../css/About.module.css'
 import Collapse from '../components/Collapse'
 import Banner from '../components/Banner'
@@ -6,6 +6,11 @@ import landscape_about from '../images/landscape_about.png'
 
 
 const About = () => {
+  
+  useEffect(() => {
+    document.title = `A propos`;
+  },[]);
+
   return (
     <div id={styles.about}>
 

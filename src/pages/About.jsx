@@ -3,11 +3,13 @@ import styles from '../css/About.module.css'
 import Collapse from '../components/Collapse'
 import Banner from '../components/Banner'
 import landscape_about from '../images/landscape_about.png'
-import a_propos from '../data/a_propos.json'
+import { useLoaderData } from 'react-router-dom'
 
 
 const About = () => {
   
+  const a_propos = useLoaderData()
+
   useEffect(() => {
     document.title = `A propos`;
   },[]);

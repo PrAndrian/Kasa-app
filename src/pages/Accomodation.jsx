@@ -1,20 +1,21 @@
 import React, { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useLoaderData, useParams } from 'react-router-dom'
 import Gallery from '../components/Gallery'
 import styles from '../css/Accomodation.module.css'
-import listLogement from '../data/logements.json' 
 import Tag from '../components/Tag'
 import Collapse from '../components/Collapse'
 import Rating from '../components/Rating'
 
 const Accomodation = () => {
-
+  
   const {logementId} = useParams()
-  const logementData = listLogement.find((logement)=>logement.id === logementId) //find c'est mieux
+  const listLogement = useLoaderData();
 
+  const logementData = listLogement.find((logement)=>logement.id === logementId)
+  
   useEffect(() => {
     document.title = `${logementData.title}`;
-  },[logementData]);
+  });
 
   return (
     <div className={styles.logement}>

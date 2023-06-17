@@ -1,12 +1,15 @@
 import React, { useEffect } from 'react'
 import styles from '../css/Home.module.css'
 import Thumb from '../components/Thumb'
-import listLogement from '../data/logements.json' 
+import { useLoaderData } from 'react-router-dom'
 import landscape_home from '../images/landscape_home.png'
 import Banner from '../components/Banner'
 
 
 const Home = () => {
+
+  const listLogement = useLoaderData()
+
   useEffect(() => {
     document.title = `Accueil`;
   },[]);

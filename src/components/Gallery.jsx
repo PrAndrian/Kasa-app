@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../css/Gallery.module.css'
 import { useState } from 'react'
 import Vector_right from '../images/Vector_right.png'
 import Vector_left from '../images/Vector_left.png'
 
 const Gallery = ({pictures}) => {
+
+    useEffect(()=>{
+        document.getElementById(`dot0`).style.backgroundColor = "#FF6060"
+    },[])
+
     const [positionImage, setPositionImage] = useState(0)
 
     const [imageShowing, setImageShowing] = useState(pictures[0])
@@ -18,6 +23,7 @@ const Gallery = ({pictures}) => {
             setPositionImage(postitionNextImage)
         }
         setImageShowing(pictures[postitionNextImage])
+        activeDot(postitionNextImage)
     }
 
     const prevImageShowing = () =>{
@@ -29,6 +35,20 @@ const Gallery = ({pictures}) => {
             setPositionImage(postitionPrevImage)
         }
         setImageShowing(pictures[postitionPrevImage])
+        activeDot(postitionPrevImage)
+    }
+
+    const selectImageShowing = (e,i) =>{
+        setPositionImage(i)
+        setImageShowing(pictures[i])
+        activeDot(i)
+    }
+
+    const activeDot = (pos) =>{
+        pictures.forEach((dots,index)=>{
+            document.getElementById(`dot${index}`).style.backgroundColor = "white"
+        })
+        document.getElementById(`dot${pos}`).style.backgroundColor = "#FF6060"
     }
 
   return (
@@ -55,7 +75,15 @@ const Gallery = ({pictures}) => {
         </div>
 
         <footer className={ pictures.length > 1 ? styles.footerGallery : styles.navGallery_hidden}>
-            {positionImage +1}/{pictures.length}
+            {/* <span>{positionImage +1}/{pictures.length}</span> */}
+            {pictures.map((picture, i) =>(
+                <span 
+                    key={i} 
+                    id={`dot${i}`}
+                    onClick={(e)=>selectImageShowing(e,i)} 
+                    className={styles.circle}
+                ></span>
+            ))}
         </footer>
     </div>
   )

@@ -2,23 +2,21 @@ import {
   createBrowserRouter, 
   createRoutesFromElements,
   Route, 
-  Outlet, 
   RouterProvider, 
 } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About"
 import Error404 from "./pages/Error404"
 import Accomodation from "./pages/Accomodation"
-import NavBar from "./components/global/NavBar";
-import Footer from "./components/global/Footer";
-import { dataLoaderAccomodation } from "./utils/dataLoaderAccomodation";
+import BaseLayout from "./components/global/BaseLayout";
 import { dataLoaderAbout } from "./utils/dataLoaderAbout";
+import { dataLoaderAccomodation } from "./utils/dataLoaderAccomodation";
 
 function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root/>}>
+      <Route path="/" element={<BaseLayout/>}>
         <Route 
           index 
           element={<Home/>} 
@@ -44,16 +42,6 @@ function App() {
   return (
     <RouterProvider router={router}/>
   );
-}
-
-const Root = () => {
-  return (
-    <>
-      <NavBar/>
-      <Outlet/>
-      <Footer/>
-    </>
-  )
 }
 
 export default App;

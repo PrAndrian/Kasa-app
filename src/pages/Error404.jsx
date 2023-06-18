@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useRouteError } from 'react-router-dom'
 import styles from '../css/404.module.css'
 
 const Error404 = () => {
+  const error = useRouteError();
+  console.error(error)
+  
   useEffect(() => {
     document.title = `Error 404`;
   },[]);

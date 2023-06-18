@@ -34,7 +34,8 @@ function App() {
           loader={dataLoaderAbout}
           errorElement={<Error404 />}
         />
-        <Route path="*" element={<Error404/>}/>  
+        <Route path="/Introuvable" element={<Error404/>}/>  
+        <Route path="/*" element={<Error404/>}/>  
       </Route>
     )
   )

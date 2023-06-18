@@ -8,11 +8,11 @@ import Banner from '../components/Banner'
 
 const Home = () => {
 
-  const listLogement = useLoaderData()
-
   useEffect(() => {
-    document.title = `Accueil`;
+    document.title = `Kasa - Accueil`;
   },[]);
+
+  const listLogement = useLoaderData();
 
   return (
     <div id={styles.home}>

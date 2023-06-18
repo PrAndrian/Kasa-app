@@ -11,7 +11,7 @@ const About = () => {
   const a_propos = useLoaderData()
 
   useEffect(() => {
-    document.title = `A propos`;
+    document.title = `Kasa - A propos`;
   },[]);
 
   return (
@@ -22,6 +22,7 @@ const About = () => {
       <div className={styles.collapse_about}>
         { a_propos.map((collapse)=>
           <Collapse 
+            key={collapse.title}
             title={collapse.title} 
             text={collapse.description}
           />

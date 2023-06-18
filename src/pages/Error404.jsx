@@ -7,7 +7,7 @@ const Error404 = () => {
   console.error(error)
   
   useEffect(() => {
-    document.title = `Error 404`;
+    document.title = `Kasa - Error 404`;
   },[]);
   
   return (

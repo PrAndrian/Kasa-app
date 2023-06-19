@@ -16,7 +16,7 @@ const Home = () => {
 
   return (
     <div id={styles.home}>
-        <Banner type="base" image={landscape_home}/>
+        <Banner image={landscape_home}/>
 
         <section className={styles.thumbs_container}>
           {listLogement && listLogement.map((logement)=>{

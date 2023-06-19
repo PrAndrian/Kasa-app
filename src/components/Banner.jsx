@@ -12,12 +12,12 @@ const Banner = ({type,image}) => {
             backgroundRepeat: "no-repeat",
         }}
     >
-        {   type==="base" &&
-           (<h2 className={styles.banner_title}>
-            <span className={styles.banner_text_1}>Chez vous,</span>
-            <span className={styles.banner_text_2}> partout et ailleurs</span>
-          </h2>)
-        }
+      {  type==="base" &&
+          (<h2 className={styles.banner_title}>
+          <span className={styles.banner_text_1}>Chez vous,</span>
+          <span className={styles.banner_text_2}> partout et ailleurs</span>
+        </h2>)
+      }
     </div>
   )
 }

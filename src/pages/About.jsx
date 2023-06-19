@@ -17,7 +17,7 @@ const About = () => {
   return (
     <div id={styles.about}>
 
-      <Banner image={landscape_about}/>
+      <Banner type="base" image={landscape_about}/>
 
       <div className={styles.collapse_about}>
         { a_propos.map((collapse)=>

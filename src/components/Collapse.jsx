@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from '../css/Collapse.module.css'
 import chevron_down from '../images/chevron_down.svg'
+import PropTypes from 'prop-types';
 
 const Collapse = ({title, text }) => {
 
@@ -34,5 +35,15 @@ const Collapse = ({title, text }) => {
         </div>
     )
 }
+
+
+Collapse.propTypes = {
+    title : PropTypes.string,
+    text : PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.array
+      ])
+};
+  
 
 export default Collapse

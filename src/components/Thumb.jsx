@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from '../css/Thumb.module.css'
 import { Link } from 'react-router-dom'
-
+import PropTypes from 'prop-types';
 
 const Thumb = ({id,title,cover}) => {
   return (
@@ -17,5 +17,11 @@ const Thumb = ({id,title,cover}) => {
       </Link>
   )
 }
+
+Thumb.propTypes = {
+  id : PropTypes.string,
+  title : PropTypes.string,
+  cover : PropTypes.string,
+};
 
 export default Thumb

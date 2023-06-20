@@ -3,6 +3,8 @@ import styles from '../css/Gallery.module.css'
 import { useState } from 'react'
 import Vector_right from '../images/Vector_right.png'
 import Vector_left from '../images/Vector_left.png'
+import PropTypes from 'prop-types';
+
 
 const Gallery = ({pictures}) => {
 
@@ -88,5 +90,10 @@ const Gallery = ({pictures}) => {
     </div>
   )
 }
+
+Gallery.propTypes = {
+    pictures : PropTypes.array,
+};
+
 
 export default Gallery

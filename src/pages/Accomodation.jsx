@@ -17,6 +17,8 @@ const Accomodation = () => {
     document.title = `Kasa - ${logementData !== undefined ? logementData.title : "Introuvable" }`
   },[logementData,listLogement,logementId])
 
+  const textEquipement = logementData.equipments.map((equipement)=>(equipement+"\r\n"))
+
   if(logementData === undefined){
     return <Navigate to="/Introuvable"/>
   }
@@ -63,9 +65,7 @@ const Accomodation = () => {
             />
             <Collapse 
               title={'Equipments'} 
-              text={logementData.equipments.map((equipement)=>(
-                equipement+"\r\n"
-              ))}
+              text={textEquipement}
             />
           </section>
       </div>

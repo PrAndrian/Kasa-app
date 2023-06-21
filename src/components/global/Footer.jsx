@@ -1,14 +1,14 @@
-import React from 'react'
-import styles from '../../css/Footer.module.css'
-import logo_var1 from '../../images/logo_var1.png'
+import React from 'react';
+import styles from '../../css/Footer.module.css';
+import logoVar1 from '../../images/logo_var1.png';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer className={styles.footer}>
-      <img src={logo_var1} alt="Kasa_footer"/>
+      <img src={logoVar1} alt="Kasa_footer" />
       <span>© 2020 Kasa. All rights reserved</span>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

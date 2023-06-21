@@ -1,37 +1,34 @@
-import React, { useEffect } from 'react'
-import styles from '../css/Home.module.css'
-import Thumb from '../components/Thumb'
-import { useLoaderData } from 'react-router-dom'
-import landscape_home from '../images/landscape_home.png'
-import Banner from '../components/Banner'
+import React, { useEffect } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import styles from '../css/Home.module.css';
+import Thumb from '../components/Thumb';
+import landscapeHome from '../images/landscape_home.png';
+import Banner from '../components/Banner';
 
-
-const Home = () => {
-
+function Home() {
   useEffect(() => {
-    document.title = `Kasa - Accueil`;
-  },[]);
+    // eslint-disable-next-line no-undef
+    document.title = 'Kasa - Accueil';
+  }, []);
 
   const listLogement = useLoaderData();
 
   return (
     <div id={styles.home}>
-        <Banner image={landscape_home}/>
+      <Banner image={landscapeHome} />
 
-        <section className={styles.thumbs_container}>
-          {listLogement && listLogement.map((logement)=>{
-            return (
-              <Thumb 
-                key={logement.id}
-                id={logement.id}
-                title={logement.title} 
-                cover={logement.cover} 
-              />
-            )
-          })}
-        </section>
+      <section className={styles.thumbs_container}>
+        {listLogement && listLogement.map((logement) => (
+          <Thumb
+            key={logement.id}
+            id={logement.id}
+            title={logement.title}
+            cover={logement.cover}
+          />
+        ))}
+      </section>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

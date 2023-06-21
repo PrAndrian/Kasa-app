@@ -1,35 +1,34 @@
-import React, { useEffect } from 'react'
-import styles from '../css/About.module.css'
-import Collapse from '../components/Collapse'
-import Banner from '../components/Banner'
-import landscape_about from '../images/landscape_about.png'
-import { useLoaderData } from 'react-router-dom'
+import React, { useEffect } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import styles from '../css/About.module.css';
+import Collapse from '../components/Collapse';
+import Banner from '../components/Banner';
+import landscapeAbout from '../images/landscape_about.png';
 
-
-const About = () => {
-  
-  const a_propos = useLoaderData()
+function About() {
+  const aboutData = useLoaderData();
 
   useEffect(() => {
-    document.title = `Kasa - A propos`;
-  },[]);
+    // eslint-disable-next-line no-undef
+    document.title = 'Kasa - A propos';
+  }, []);
 
   return (
     <div id={styles.about}>
 
-      <Banner type="base" image={landscape_about}/>
+      <Banner type="base" image={landscapeAbout} />
 
       <div className={styles.collapse_about}>
-        { a_propos.map((collapse)=>
-          <Collapse 
+        { aboutData.map((collapse) => (
+          <Collapse
             key={collapse.title}
-            title={collapse.title} 
+            title={collapse.title}
             text={collapse.description}
           />
-        )}
+        ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default About
+export default About;

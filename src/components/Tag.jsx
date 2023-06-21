@@ -1,16 +1,15 @@
-import React from 'react'
-import styles from '../css/Tag.module.css'
+import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../css/Tag.module.css';
 
-
-const Tag = ({tag}) => {
+function Tag({ tag }) {
   return (
     <span className={styles.tag}>{tag}</span>
-  )
+  );
 }
 
 Tag.propTypes = {
-  tag : PropTypes.string,
+  tag: PropTypes.string.isRequired,
 };
 
-export default Tag
+export default Tag;

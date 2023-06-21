@@ -1,27 +1,26 @@
-import React from 'react'
-import styles from '../css/Rating.module.css'
-import start_up from '../images/start_up.svg'
-import start_down from '../images/start_down.svg' 
+/* eslint-disable react/no-array-index-key */
+import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../css/Rating.module.css';
+import startUp from '../images/start_up.svg';
+import startDown from '../images/start_down.svg';
 
-const Rating = ({rating}) => {
-    const ratingNumber = Number(rating)
-    return (
-        <div className={styles.star_rating}>
-            {[...Array(5)].map((star,i) => {   
-                if(i <  ratingNumber){
-                    return <img key={i} className={styles.star} src={start_up} alt="note_étoilé"/>
-                }     
-                else{
-                    return <img key={i} className={styles.star} src={start_down} alt="note_étoilé"/>
-                }
-            })}
-        </div>
-    )
+function Rating({ rating }) {
+  const ratingNumber = Number(rating);
+  return (
+    <div className={styles.star_rating}>
+      {[...Array(5)].map((star, i) => {
+        if (i < ratingNumber) {
+          return <img key={i} className={styles.star} src={startUp} alt="note_étoilé" />;
+        }
+        return <img key={i} className={styles.star} src={startDown} alt="note_étoilé" />;
+      })}
+    </div>
+  );
 }
 
 Rating.propTypes = {
-    rating : PropTypes.string,
+  rating: PropTypes.string.isRequired,
 };
 
-export default Rating
+export default Rating;

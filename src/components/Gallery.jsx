@@ -1,25 +1,14 @@
 /* eslint-disable no-undef */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from '../css/Gallery.module.css';
 import VectorRight from '../images/Vector_right.png';
 import VectorLeft from '../images/Vector_left.png';
 
 function Gallery({ pictures }) {
-  useEffect(() => {
-    document.getElementById('dot0').style.backgroundColor = '#FF6060';
-  }, []);
-
   const [positionImage, setPositionImage] = useState(0);
 
   const [imageShowing, setImageShowing] = useState(pictures[0]);
-
-  const activeDot = (pos) => {
-    pictures.forEach((dots, index) => {
-      document.getElementById(`dot${index}`).style.backgroundColor = 'white';
-    });
-    document.getElementById(`dot${pos}`).style.backgroundColor = '#FF6060';
-  };
 
   const nextImageShowing = () => {
     let postitionNextImage = positionImage + 1;
@@ -30,7 +19,6 @@ function Gallery({ pictures }) {
       setPositionImage(postitionNextImage);
     }
     setImageShowing(pictures[postitionNextImage]);
-    activeDot(postitionNextImage);
   };
 
   const prevImageShowing = () => {
@@ -42,13 +30,11 @@ function Gallery({ pictures }) {
       setPositionImage(postitionPrevImage);
     }
     setImageShowing(pictures[postitionPrevImage]);
-    activeDot(postitionPrevImage);
   };
 
   const selectImageShowing = (i) => {
     setPositionImage(i);
     setImageShowing(pictures[i]);
-    activeDot(i);
   };
 
   return (
@@ -75,16 +61,22 @@ function Gallery({ pictures }) {
       </div>
 
       <footer className={pictures.length > 1 ? styles.footerGallery : styles.navGallery_hidden}>
-        {/* <span>{positionImage +1}/{pictures.length}</span> */}
-        {pictures.map((picture, i) => (
-          <span
-            // eslint-disable-next-line react/no-array-index-key
-            key={i}
-            id={`dot${i}`}
-            onClickCapture={() => selectImageShowing(i)}
-            className={styles.circle}
-          />
-        ))}
+        <div>
+          {pictures.map((picture, i) => (
+            <span
+              // eslint-disable-next-line react/no-array-index-key
+              key={i}
+              id={`dot${i}`}
+              onClickCapture={() => selectImageShowing(i)}
+              className={positionImage === i ? `${styles.circle} ${styles.active}` : styles.circle}
+            />
+          ))}
+        </div>
+        <p>
+          {positionImage + 1}
+          /
+          {pictures.length}
+        </p>
       </footer>
     </div>
   );

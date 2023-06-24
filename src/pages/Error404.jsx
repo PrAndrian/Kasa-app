@@ -1,13 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from '../css/404.module.css';
 
 function Error404() {
-  useEffect(() => {
-    // eslint-disable-next-line no-undef
-    document.title = 'Kasa - Error 404';
-  }, []);
+  // eslint-disable-next-line no-undef
+  document.title = 'Kasa - Error 404';
 
   return (
     <div id={styles.page404}>

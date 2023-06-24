@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Navigate, useLoaderData, useParams } from 'react-router-dom';
 import Gallery from '../components/Gallery';
 import styles from '../css/Accomodation.module.css';
@@ -12,13 +12,11 @@ function Accomodation() {
 
   const [logementData] = useState(listLogement.find((logement) => logement.id === logementId));
 
-  useEffect(() => {
-    // eslint-disable-next-line no-undef
-    document.title = `Kasa - ${logementData !== undefined ? logementData.title : 'Introuvable'}`;
-  }, [logementData, listLogement, logementId]);
+  // eslint-disable-next-line no-undef
+  document.title = `Kasa - ${logementData !== undefined ? logementData.title : 'Introuvable'}`;
 
   if (logementData === undefined) {
-    return <Navigate to="/Introuvable" />;
+    return <Navigate to="/404" />;
   }
 
   return (

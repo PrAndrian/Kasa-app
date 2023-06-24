@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import styles from '../css/Home.module.css';
 import Thumb from '../components/Thumb';
@@ -6,10 +6,8 @@ import landscapeHome from '../images/landscape_home.png';
 import Banner from '../components/Banner';
 
 function Home() {
-  useEffect(() => {
-    // eslint-disable-next-line no-undef
-    document.title = 'Kasa - Accueil';
-  }, []);
+  // eslint-disable-next-line no-undef
+  document.title = 'Kasa - Accueil';
 
   const listLogement = useLoaderData();
 

@@ -21,21 +21,17 @@ function App() {
           index
           element={<Home />}
           loader={dataLoaderAccomodation}
-          errorElement={<Error404 />}
         />
         <Route
           path="/fiche-logement/:logementId"
           element={<Accomodation />}
           loader={dataLoaderAccomodation}
-          errorElement={<Error404 />}
         />
         <Route
           path="/a-propos"
           element={<About />}
           loader={dataLoaderAbout}
-          errorElement={<Error404 />}
         />
-        <Route path="/Introuvable" element={<Error404 />} />
         <Route path="/*" element={<Error404 />} />
       </Route>,
     ),

@@ -39,7 +39,7 @@
 }
 
 .footerGallery{
-    display : none;
+    display: none;
     color : white;
     font-weight: 500;
     font-size: 18px;
@@ -58,6 +58,10 @@
     background-color: white;
 }
 
+.active{
+    background-color: #FF6060;
+}
+
 @media screen and (min-width: 769px) {
     .gallery{
         height: 415px;
@@ -69,6 +73,8 @@
         height: 79.2px;
     }
     .footerGallery{
-        display : block;
+        display : flex;
+        align-items: center;
+        flex-direction: column ;
     }
 }

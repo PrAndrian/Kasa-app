@@ -5,7 +5,6 @@ import landscapeAbout from '../images/landscape_about.png';
 import { useEffect, useState } from 'react';
 
 function About() {
-
   const url = 'http://127.0.0.1:5173/data/a_propos.json'
   const [aboutData, setAboutData] = useState([])
   

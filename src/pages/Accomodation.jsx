@@ -9,8 +9,6 @@ function Accomodation() {
   const location = useLocation();
   const logementData = location.state?.data
   
-  console.log(logementData)
-
   // eslint-disable-next-line no-undef
   document.title = `Kasa - ${logementData !== undefined ? logementData.title : 'Introuvable'}`;
 

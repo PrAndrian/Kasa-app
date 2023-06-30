@@ -14,16 +14,19 @@ function App() {
     <>
       <NavBar/>
       <Routes>
-        <Route path='/' element={<Home />}/>
+        <Route 
+          index 
+          element={<Home/>}
+        />
         <Route
           path="/fiche-logement/:logementId"
-          element={<Accomodation />}
+          element={<Accomodation/>}
         />
         <Route
           path="/a-propos"
           element={<About />}
         />
-        <Route path="/*" element={<Error404 />} />
+        <Route path="/*" element={<Error404/>} />
       </Routes>
       <Footer/>
     </>

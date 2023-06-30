@@ -2,17 +2,23 @@ import styles from '../css/Home.module.css';
 import Thumb from '../components/Thumb';
 import landscapeHome from '../images/landscape_home.png';
 import Banner from '../components/Banner';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function Home() {
+  const url = 'http://127.0.0.1:5173/data/logements.json'
+  const [listLogement, setListLogement] = useState([])
+  
   useEffect(()=>{
-    fetch("")
+    fetch(url)
+    .then((response)=>response.json())
+    .then((data)=>{
+      setListLogement(data)
+    })
   },[])
 
   // eslint-disable-next-line no-undef
   document.title = 'Kasa - Accueil';
 
-  const listLogement = []
 
   return (
     <div id={styles.home}>
@@ -22,9 +28,7 @@ function Home() {
         {listLogement && listLogement.map((logement) => (
           <Thumb
             key={logement.id}
-            id={logement.id}
-            title={logement.title}
-            cover={logement.cover}
+            logement={logement}
           />
         ))}
       </section>

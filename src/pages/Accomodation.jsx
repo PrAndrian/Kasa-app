@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { Navigate, useLoaderData, useParams } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import Gallery from '../components/Gallery';
 import styles from '../css/Accomodation.module.css';
 import Tag from '../components/Tag';
@@ -7,10 +6,10 @@ import Collapse from '../components/Collapse';
 import Rating from '../components/Rating';
 
 function Accomodation() {
-  const { logementId } = useParams();
-  const listLogement = useLoaderData();
-
-  const [logementData] = useState(listLogement.find((logement) => logement.id === logementId));
+  const location = useLocation();
+  const logementData = location.state?.data
+  
+  console.log(logementData)
 
   // eslint-disable-next-line no-undef
   document.title = `Kasa - ${logementData !== undefined ? logementData.title : 'Introuvable'}`;

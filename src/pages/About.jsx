@@ -1,11 +1,21 @@
-import { useLoaderData } from 'react-router-dom';
 import styles from '../css/About.module.css';
 import Collapse from '../components/Collapse';
 import Banner from '../components/Banner';
 import landscapeAbout from '../images/landscape_about.png';
+import { useEffect, useState } from 'react';
 
 function About() {
-  const aboutData = useLoaderData();
+
+  const url = 'http://127.0.0.1:5173/data/a_propos.json'
+  const [aboutData, setAboutData] = useState([])
+  
+  useEffect(()=>{
+    fetch(url)
+    .then((response)=>response.json())
+    .then((data)=>{
+      setAboutData(data)
+    })
+  },[])
 
   // eslint-disable-next-line no-undef
   document.title = 'Kasa - A propos';
